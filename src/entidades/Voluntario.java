@@ -8,7 +8,7 @@ public class Voluntario {
     protected int quantidadeAcoes;
     protected double pontuacaoImpacto;
 
-    public Voluntario(String nome, String email, String matricula) {
+    public Voluntario(String nome, String email, String matricula, int quantidadeAcoes, double pontuacaoImpacto) {
         this.nome = nome;
         this.email = email;
         this.matricula = matricula;
@@ -35,3 +35,15 @@ public class Voluntario {
     public double getPontuacaoImpacto() {
         return pontuacaoImpacto;
     }
+
+    @Override
+    public String toString() {
+        return "Voluntario{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", matricula='" + matricula + '\'' +
+                ", quantidadeAcoes=" + quantidadeAcoes +
+                ", pontuacaoImpacto=" + pontuacaoImpacto +
+                '}';
+    }
+}
