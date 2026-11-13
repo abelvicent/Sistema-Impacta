@@ -19,4 +19,14 @@ public class MutiraoReciclagem extends Acao {
     public int getDuracaoHoras() {
         return duracaoHoras;
     }
+
+    @Override
+    public String getTipo() {
+        return "Mutirão de Reciclagem";
+    }
+
+    @Override
+    public String detalhesEspecificos() {
+        return "Duração: " + duracaoHoras + "h";
+    }
 }

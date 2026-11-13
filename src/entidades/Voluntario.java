@@ -2,18 +2,18 @@ package entidades;
 
 public class Voluntario {
 
-    protected String nome;
-    protected String email;
-    protected String matricula;
-    protected int quantidadeAcoes;
-    protected double pontuacaoImpacto;
+    private String nome;
+    private String email;
+    private String matricula;
+    private int quantidadeAcoes;
+    private double pontuacaoImpacto;
 
-    public Voluntario(String nome, String email, String matricula, int quantidadeAcoes, double pontuacaoImpacto) {
+    public Voluntario(String nome, String email, String matricula) {
         this.nome = nome;
         this.email = email;
         this.matricula = matricula;
-        this.quantidadeAcoes = quantidadeAcoes;
-        this.pontuacaoImpacto = pontuacaoImpacto;
+        this.quantidadeAcoes = 0;
+        this.pontuacaoImpacto = 0;
     }
 
     public String getNome() {
@@ -34,6 +34,28 @@ public class Voluntario {
 
     public double getPontuacaoImpacto() {
         return pontuacaoImpacto;
+    }
+
+    public void adicionarAcao(Acao acao) {
+        quantidadeAcoes++;
+        pontuacaoImpacto += acao.calcularPontuacao();
+    }
+
+    @Override
+    public boolean equals(Object outro) {
+        if (this == outro) {
+            return true;
+        }
+        if (!(outro instanceof Voluntario)) {
+            return false;
+        }
+        Voluntario v = (Voluntario) outro;
+        return email.equalsIgnoreCase(v.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return email.toLowerCase().hashCode();
     }
 
     @Override

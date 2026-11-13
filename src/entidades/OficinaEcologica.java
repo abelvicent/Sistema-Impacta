@@ -25,5 +25,15 @@ public class OficinaEcologica extends Acao {
     public boolean isKitMaterial() {
         return kitMaterial;
     }
-}
 
+    @Override
+    public String getTipo() {
+        return "Oficina Ecológica";
+    }
+
+    @Override
+    public String detalhesEspecificos() {
+        return "Duração: " + duracaoHoras + "h"
+                + "\nKit de material educativo: " + (kitMaterial ? "Sim" : "Não");
+    }
+}

@@ -19,4 +19,14 @@ public class PlantioMudas extends Acao {
     public int getQtdMudas() {
         return qtdMudas;
     }
+
+    @Override
+    public String getTipo() {
+        return "Plantio de Mudas";
+    }
+
+    @Override
+    public String detalhesEspecificos() {
+        return "Quantidade de mudas: " + qtdMudas;
+    }
 }
